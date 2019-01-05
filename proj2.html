@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<!-- Code developed by Patil, Neha
+Project #2
+Spring 2018
+Username : jadrn029, 
+RED ID : 821545485 -->
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, no-store, must-revalidate" />
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+	<META HTTP-EQUIV="Expires" CONTENT="0" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <title>Shoe Girl</title>
+	<link rel="stylesheet" href="/jadrn029/css/MyCSS.css"/>
+	<script src="/jadrn029/js/MyJavaScript.js"></script>
+	<script src="/jadrn029/js/shopping_cart.js"></script>
+	<script src="/jadrn029/js/CheckOut.js"></script>	
+	   
+</head>
+<body>
+
+<div id="busyContainer"><div id="busy"><img src="/jadrn029/images/busywait.gif" width="80px"/></div></div>
+<div id="header">
+  <div><a href="http://jadran.sdsu.edu/jadrn029/proj2.html"><img src="/jadrn029/images/logo.png" width="70px" height="auto"></a></div>
+  <div><h1>Shoe Girl</h1></div>
+  <div id="cartlogo"><span id="count"></span></div>
+</div>
+
+<div id="menu">
+<a href="http://jadran.sdsu.edu/jadrn029/proj2.html"><input type="button" name="home" size="20" id="home" class="btn btn-primary" value="Home" /></a>
+<input type="button" name="checkout" size="20" id="checkout" class="btn btn-primary" value="Check Out Now" />
+
+<input type="button" name="contactus" size="20" id="contactus" class="btn btn-primary" value="Contact Us" />
+</div>
+
+
+<div id="maincontent">
+<div class="row" id="filters">
+    <div class="col-md-3">
+     <input type="text" name="searchtxt" size="20" id="searchtxt" placeholder="Search.." />
+    </div>
+
+    <div class="col-md-3">
+	<select name="category" id="category">
+	<option value="">Select Category..</option>
+	<option value="1">Pumps</option>
+	<option value="2">Stilettos</option>
+	<option value="3">Wedge Heels</option>
+	<option value="4">Ankle Booties</option>
+	<option value="5">Sneakers</option>
+	<option value="6">Athletic</option>
+	<option value="7">Flats</option>
+	</select>
+	</div>
+
+	<div class="col-md-3">
+    <select name="vendor" id="vendor">
+	<option value="">Select Vendor..</option>
+	<option value="1">Gucci</option>
+	<option value="2">Asics</option>
+	<option value="3">Calvin Klein</option>
+	<option value="4">Nike</option>
+	<option value="5">Puma</option>
+	<option value="6">Clarks</option>
+	<option value="7">Bebe</option>
+	<option value="8">Michael Kors</option>
+	</select>
+    </div>
+	
+	<div class="col-md-3">
+     <input type="button" name="search" size="20" id="search" value="Search" class="btn btn-primary btn-sm" />
+
+    </div>
+</div>
+
+<div id="products"></div>
+
+<div id="customerinfo"></div>
+
+<div id="cartproducts"></div>
+
+
+<div class="ui-widget">
+
+<div id="dialog-modal" class="widget-dialog-container" title="Complete Your Order">
+    <br>
+	<form name="addform" id="addform">
+    <table class="customerorder">
+       <tr><th>Billing Address</th><th></th><th>Shipping Address</th><th></th></tr>
+	   <tr><td></td><td></td><td></td><td></td></tr>
+	   <tr>
+	   <td><label for="Fname" class="required">First Name</label></td>
+	   <td><input type="text" name="Fname" size="15" id="Fname" autofocus /></td>
+	   <td><label for="SFname" class="required">First Name</label></td>
+	   <td><input type="text" name="SFname" size="15" id="SFname"/></td>
+	   </tr>
+	   
+	    <tr>
+	   <td><label for="Lname" class="required">Last Name</label></td>
+	   <td><input type="text" name="Lname" size="15" id="Lname"  /></td>
+	   <td><label for="SLname" class="required">Last Name</label></td>
+	   <td><input type="text" name="SLname" size="15" id="SLname"  /></td>
+	   </tr>
+	   
+		<tr>
+	   <td><label class="required">Address</label></td>
+		<td><input type="text" name="address1" size="30" id="address1"/></td>
+		<td><label class="required">Address</label></td>
+		<td><input type="text" name="Saddress1" size="30" id="Saddress1"/></td>
+		</tr>
+		
+		<tr>
+	   <td></td>
+		<td><input type="text" name="address2" size="30" id="address2" /></td>
+	   <td></td>
+		<td><input type="text" name="Saddress2" size="30" id="Saddress2" /></td>
+		</tr>
+		
+		<tr>
+	   <td><label for="city" class="required">City</label></td>
+	    <td><input type="text" name="city" size="20" id="city"/></td>
+		 <td><label for="Scity" class="required">City</label></td>
+		  <td><input type="text" name="Scity" size="20" id="Scity"/></td>
+ </tr>
+ 
+ <tr>
+	   <td><label for="state" class="required">State</label> <input type="text" name="state" size="4" maxlength="2" id="state" value="CA"/></td>
+	   <td><label for="zip" class="required">Zipcode</label> <input type="text" name="zip" size="10" maxlength="5" id="zip" placeholder=" #####" /></td>
+	   <td><label for="Sstate" class="required">State</label> <input type="text" name="Sstate" size="4" maxlength="2" id="Sstate" value="CA"/></td>
+	   <td><label for="Szip" class="required">Zipcode</label> <input type="text" name="Szip" size="10" maxlength="5" id="Szip" placeholder=" #####" /></td>
+</tr>
+
+<tr>
+	   <td><label class="input required" for="contactno">Phone Number</label></td>
+	   <td><input type="text" name="contactno" id="contactno" size="15" maxlength="12"  placeholder=" ##########"/></td>
+	   <td><label class="input required" for="Scontactno">Phone Number</label></td>
+	   <td><input type="text" name="Scontactno" id="Scontactno" size="15" maxlength="12"  placeholder=" ##########"/></td>
+</tr>   
+<tr>
+	   <td></td>
+	   <td></td>
+	   <td> <input type="checkbox" name="shipadd" id="shipadd">   Use same as Billing address</td>
+	   <td></td>
+	   
+</tr>
+</table> 
+
+<br>
+<div class="modalbuttons"> 
+   <label for="cardtype" class="required" >Card Type</label>
+	<select name="cardtype" id="cardtype">
+	<option value="">Select Card</option>
+	<option value="Visa">Visa</option>
+	<option value="Mastercard">Mastercard</option>
+	<option value="Discover">Discover</option>
+	<option value="American Express">American Express</option>
+</select>
+
+<label class="input required" for="cardno">Card Number</label>
+<input type="text" name="cardno" id="cardno" size="18" maxlength="16"  placeholder=" ################"/>
+
+<label class="input required" for="expdate">Expiration Date</label>
+<input type="text" name="expdate" id="expdate" size="10" maxlength="7"  placeholder="MM/YYYY"/>
+
+<label class="input required" for="seccode">Security Code</label>
+<input type="password" name="seccode" id="seccode" size="10" maxlength="3"  placeholder=" ###"/>
+</div>
+
+<br><br><br>
+           
+<div class="modalbuttons"> 
+  <input type="reset" name="reset" id="reset" class="btn btn-primary btn-xs" value="Clear">
+<input type="button" class='btn btn-primary btn-xs' id='submitorder'  value="Order Summary"/>
+</div>
+<div id="error"></div>
+	 
+
+</form>	
+     
+</div>
+
+
+</div>
+</div>
+
+<div id="contactcontent">
+<div id="title">Contact Information</div><br>
+<div id="contact">
+Shoe Girl <br>
+6780, Montezuma Road<br>
+San Diego, California - 92420<br>
+Hours : 10:00 AM - 7:00 PM , Monday - Sunday
+<br><br>
+ <i class="glyphicon glyphicon-envelope"></i>           Email :                	shoegirl@sgirl.com</span>
+<br>
+<span class="space"><i class="glyphicon glyphicon-earphone"></i>       Phone :          		+1 (123) 456-7890</span>
+<br><br>
+<img src="/jadrn029/images/twitter.png" width="60px" height="auto">
+<img src="/jadrn029/images/fb.png" width="60px" height="auto">
+<img src="/jadrn029/images/insta.png" width="60px" height="auto">
+</div>
+</div>
+
+
+</body>
+
+</html>  

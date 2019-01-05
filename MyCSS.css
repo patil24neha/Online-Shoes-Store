@@ -1,0 +1,253 @@
+/* Code developed by Patil, Neha
+Project #2
+Spring 2018
+Username : jadrn029, 
+RED ID : 821545485 */
+*
+{
+	margin : 0;
+	padding: 0;
+}
+html
+{
+	height: 100%;
+	width: 100%;
+}
+body 
+{
+	font-size: 100%;
+	width: 100%;
+	min-width: 768px;
+	color: MidnightBlue;
+	height: 100%;
+	font-family: Arial,Helvetica,sans-serif;
+}
+
+h1{color:white; text-align:center;}
+
+#header
+{
+    background-color: MidnightBlue;
+	height:80px;
+	width: 100%;
+	display: flex;
+    justify-content: space-between;
+}
+#header div:nth-child(3)
+{
+	background-image:url("/jadrn029/images/cart.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 70px;
+	margin: 8px 20px 2px 20px;
+	text-align:center;
+}
+#header div:nth-child(1)
+{margin-left:20px;}
+#count
+{
+color:white;
+font-size: 20px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#header img{margin-top:5px;}
+#menu{
+    display: flex;
+    justify-content: space-evenly;
+    width: 500px;
+    margin: 10px auto 20px auto;
+}
+	
+#menu input {
+    width: 150px;
+}
+
+.border{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.btn
+{ background-color: MidnightBlue;
+}
+
+h1, h2,h3{
+	text-align: center;
+	}
+#cartproducts h2{padding-top:20px;}
+#filters,#products
+{
+margin-left: auto;
+margin-right: auto;
+width:800px;
+margin-bottom: 10px;
+height: 30px;
+}
+#products{
+margin-top:20px; 
+font-size:13px;
+}
+#filters input, #filters select {
+    height: 25px;
+}
+#filters .col-md-3:nth-child(2),#filters .col-md-3:nth-child(3),#products .row .col-md-4:nth-child(2){text-align:center;}
+#filters .col-md-3:nth-child(4),#products .row .col-md-4:nth-child(3){text-align:right;}
+ 
+.justify{text-align:justify !important;
+margin-top:30px;}
+.pdetails{
+padding-top:15px; 
+font-size:14px;}
+.qdetails{
+width:200px;
+text-align:center;
+margin:auto;
+}
+
+.pdetails .content {text-align:center;}
+.skuid{
+color: blue;
+text-decoration: underline;
+  cursor: pointer;
+  font-weight:bold;
+}
+.bold,#title{ font-weight:bold;}
+
+#dialog-modal
+{
+background-color:white;
+font-size:10px;
+border: 1px solid MidnightBlue; 
+z-index:1;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+.ui-widget-container
+{
+width:100%;
+
+}
+.ui-widget{
+left:0px;
+margin:auto;
+
+}
+.ui-dialog-titlebar button{float:right;}
+.ui-dialog-titlebar{
+background-color:white;
+color:midnightblue;
+border:1px solid midnightblue;
+font-size:13px;
+height:24px;
+}
+#reset,#submitorder{width:100px;}
+table.order
+{
+	margin:auto;
+ 	border-spacing: 10px;
+	border-collapse: collapse;
+
+}
+table.customerorder{
+margin-left:30px;
+margin-right:30px;
+border-collapse: collapse;
+}
+.customerorder td{padding:3px 3px 3px 3px;}
+.order td,.order th
+{
+	border: 2px solid MidnightBlue; 
+	padding:10px;
+	font-size: 20px;
+	text-align: center;
+}
+.order td:nth-child(4),.order td:nth-child(5){width:100px;}
+.order td:nth-child(2){width:80px;}
+.modalbuttons,.noprods,#title,#contact{text-align:center;}
+#title{font-size:20px;}
+#contact
+{
+font-size: 25px;
+margin-left:65px;
+margin-right:50px;
+}
+#cartproducts h1 {color:MidnightBlue;}
+.required:after {
+  content:"*";
+  color:red;
+}
+
+.confirmmsg{
+text-align:center;
+font-size:20px;}
+
+.row{margin:auto;}
+.error{
+color:red;
+height:20px;
+font-size:15px;
+
+}
+#cartproducts .error
+{
+color:red;
+height:40px;
+font-size:15px;
+width:150px;
+}
+.prod{height:170px;}
+#orderbuttons{
+width:300px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+}
+#cancelOrder,#placeOrder{
+width:140px;
+}
+#error{text-align:center; color:red;}
+
+#cartlogo:hover{cursor:pointer;}
+
+#busy{
+    position: fixed;
+     
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+	z-index:3;
+    
+}
+
+#busyContainer{
+   position: fixed;
+    display: none; 
+    top: 0;
+    left: 0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.3);
+	z-index:2;
+    }
+#continue{width:120px;}
+#container{    
+margin-top: 20px;
+display: flex;
+justify-content:space-around;
+}
+
+.odetails{    
+display: flex;
+justify-content:space-around;
+}
+.payment{width:300px;}
+#addform table{
+width:96%;
+}
+#addform th{
+width:10%;
+}
